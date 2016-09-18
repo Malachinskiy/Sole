@@ -126,6 +126,20 @@ public class MainPageTest {
 				"это часом не зашквар, не");
 		helpbuy.calcclick();
 	}
+	
+	@Test
+	public void calcuHelpBuy() {
+		Banner banner = new Banner(driver);
+		HelpbuyPage helpbuy = new HelpbuyPage(driver);
+		if (banner.getContainer().isDisplayed()) {
+			banner.clickHelpBuy();
+		}
+		// helpbuy.getNameFieldHelpBuy().sendKeys("Tralalalala");
+		// helpbuy.getModelFieldHelpBuy().sendKeys("Adidas Special");
+		helpbuy.calculation("VOVA TEST!!!", "Adidas Special", "0933340169", "а я ебу", "цветом как у кешкатуры",
+				"это часом не зашквар, не");
+		helpbuy.calcclick();
+	}
 
 	
 }
