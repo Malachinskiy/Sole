@@ -128,7 +128,7 @@ public class MainPageTest {
 	}
 	
 	@Test
-	public void calcuHelpBuy() {
+	public void sendFormHelpBuyTest() {
 		Banner banner = new Banner(driver);
 		HelpbuyPage helpbuy = new HelpbuyPage(driver);
 		if (banner.getContainer().isDisplayed()) {
