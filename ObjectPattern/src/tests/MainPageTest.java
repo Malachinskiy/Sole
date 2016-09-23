@@ -1,4 +1,4 @@
-package sole;
+package tests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -12,6 +12,9 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import sole.Banner;
+import sole.HelpbuyPage;
 
 public class MainPageTest {
 	private WebDriver driver;
