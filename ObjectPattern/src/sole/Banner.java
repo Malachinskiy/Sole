@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 public class Banner {
 	private static final String CONTAINER_XPATH = ".//*[@id='fbpromo']";
@@ -12,6 +13,8 @@ public class Banner {
 	private static final String BANNER_IMAGE = ".//*[@id='fbpromo']/div[3]/a/img";
 	private static final String MAINPAGE_BRANDS = ".//*[@id='hornav']/ul/li[4]/a/span/span";
 	private static final String MAINMENU_BRANDS_ADIDAS = ".//*[@id='hornav']/ul/li[4]/div/div/div[2]/div/div/div[2]/ul/li[7]/a/span/span";
+	private static final String MAINMENU_HELPBUY_LINK= ".//*[@id='bottom3']/div/div/ul/li[6]/a";
+	
 	private WebDriver driver;
 
 	public Banner(WebDriver driver) {
@@ -41,6 +44,10 @@ public class Banner {
 	public WebElement getBrandsAdidas(){
 		return driver.findElement(By.xpath(MAINMENU_BRANDS_ADIDAS));
 	}
+	
+	public WebElement getMainMenuHelpBuyLink(){
+		return driver.findElement(By.xpath(MAINMENU_HELPBUY_LINK));
+	}
 
 	public void close() {
 		getContainerClose().click();
@@ -66,6 +73,17 @@ public class Banner {
 	 public AdidasProducts clickBrandsAdidas(){
 		 getBrandsAdidas().click();
 		 return new AdidasProducts();
+		 	 
+	 }
+	 
+	 public void selectBrand(){
+		 Select selectBrand = new Select(driver.findElement(By.xpath(MAINPAGE_BRANDS)));
+		 selectBrand.selectByValue("menu-title"); 
+	 }
+	 
+	 public HelpbuyPage getHelpBuyPageFromMainMenu(){
+		 getMainMenuHelpBuyLink().click();
+		 return new HelpbuyPage(driver);
 	 }
 	 
 
